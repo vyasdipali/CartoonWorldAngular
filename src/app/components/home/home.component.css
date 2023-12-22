@@ -1,0 +1,149 @@
+.car-toon-div-main {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    column-gap: 70px;
+    row-gap: 85px;
+    margin-left: 50px;
+    margin-top: 50px;
+
+}
+
+.main-div-first {
+    width: 320px;
+    height: 485px;
+    background-color:#F7F2FA; 
+    border-radius: 10px;
+    box-shadow: 3px 9px 15px rgb(0, 0, 0, 0.5);
+    transition: 0.s;
+}
+
+.img-div {
+    width: 275px;
+    height: 220px;
+    background-color:#e5e0da;
+    border-radius: 5px;
+    margin-inline-start: 20px;
+    align-items: center;
+    margin-top: 21px;
+}
+
+.car-toon-name {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    padding: 20px;
+    /* display: -webkit-box;
+    -webkit-line-clamp: 1;
+    -webkit-box-orient: vertical; */
+}
+
+.description-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+    font-size: 18px;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    margin: -3px 21px 19px ;
+  
+    /* height: 115px; */
+}
+.img-set-div{
+    width: 240px;
+    height: 190px;
+    border-radius: 5px;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+/* button css */
+
+#bottone5 {
+    align-items: center;
+    background-color: #FFFFFF;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    border-radius: .25rem;
+    box-shadow: rgba(0, 0, 0, 0.02) 0 1px 3px 0;
+    box-sizing: border-box;
+    color: rgba(0, 0, 0, 0.85);
+    cursor: pointer;
+    display: inline-flex;
+    font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
+    font-size: 16px;
+    font-weight: 600;
+    justify-content: center;
+    line-height: 1.25;
+    /* padding: calc(.875rem - 1px) calc(1.5rem - 1px); */
+    text-decoration: none;
+    transition: all 250ms;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    vertical-align: baseline;
+    width: 41px;
+    height: 32px;
+   }
+   
+   #bottone5:hover,
+   #bottone5:focus {
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
+    color: rgba(0, 0, 0, 0.65);
+   }
+   
+   #bottone5:hover {
+    transform: translateY(-1px);
+   }
+   
+   #bottone5:active {
+    background-color: #F0F0F1;
+    border-color: rgba(0, 0, 0, 0.15);
+    box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
+    color: rgba(0, 0, 0, 0.65);
+    transform: translateY(0);
+   }
+
+
+   /* SHOW DATA MODEL CSS */
+
+   .img-div-show {
+    width: auto;
+    height: 133px;
+    background-color:#e5e0da;
+    border-radius: 5px;
+    margin-inline-start: 20px;
+    align-items: center;
+
+}
+.img-set-div-show{
+    width: 144px;
+    height: 102px;
+    border-radius: 5px;
+    margin-top: 16px;
+    padding: 0 9px;
+}
+
+.d-name{
+    color: black;
+    padding: 20px;
+    font-size: 21px;
+}
+.d-input{
+    padding: 10px;
+    height: 41px;
+    width: 250px;
+    margin: 0px 0px 15px 20px;
+    color: black;
+    border: 1px solid rgb(4, 4, 4);
+    font-family: -webkit-body;
+    border-radius: 8px;
+}
+.d-name-d{
+    color: black;
+    font-size: 21px;
+    padding: 0px 0px 14px 20px;
+}

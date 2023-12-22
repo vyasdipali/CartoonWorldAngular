@@ -1,0 +1,123 @@
+<!-- <div>
+  <form action="" (click)="onLoginDataSubmit()">
+    <div>
+      <input
+        type="text"
+        placeholder="Enter phoneNo "
+        [(ngModel)]="user.phoneNumber"
+        name="phoneNumber"
+      />
+      <input
+        type="password"
+        placeholder="Enter password "
+        [(ngModel)]="user.password"
+        name="password"
+      />
+      <div style="display: flex; justify-content: center">
+        <button type="submit" class="d-btn">submit</button>
+      </div>
+    </div>
+  </form>
+</div> -->
+
+<div class="container">
+  <form (ngSubmit)="onLoginDataSubmit()" #LoginForm="ngForm">
+    <div style="display: flex; justify-content: center; margin: 2px">
+      <div class="text-center">
+        <img
+          src="https://cdn.pixabay.com/photo/2016/03/31/19/56/avatar-1295397__340.png"
+          class="img-fluid profile-image-pic img-thumbnail rounded-circle my-3"
+          width="150px"
+          alt="profile"
+          style="border-radius: 15%"
+        />
+      </div>
+    </div>
+
+    <div
+      style="
+        display: flex;
+        justify-content: center;
+        margin: 0%;
+        margin-top: -27px;
+      "
+    >
+      <h2 class="creacte-ac">Welcome Back</h2>
+    </div>
+    <table class="table">
+      <tr>
+        <th scope="row">
+          <label for="phoneNo" class="form-label">Phone No :</label>
+        </th>
+        <td>
+          <input
+            type="text"
+            class="form-control"
+            id="phoneNo"
+            name="phoneNo"
+            [(ngModel)]="user.phoneNumber"
+            required
+          />
+        </td>
+         @if (LoginForm.submitted && !user.phoneNumber) {
+        <div style="display: flex; align-items: center">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-exclamation-circle-fill"
+            viewBox="0 0 16 16"
+            style="color: red"
+          >
+            <path
+              d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+            />
+          </svg>
+        </div>
+        }
+      </tr>
+
+      <tr>
+        <th scope="row">
+          <label for="password" class="form-label">Password :</label>
+        </th>
+        <td>
+          <input
+            type="password"
+            class="form-control"
+            id="password"
+            name="password"
+            [(ngModel)]="user.password"
+            required
+          />
+        </td>
+
+        @if (LoginForm.submitted && !user.password) {
+          <div style="display: flex; align-items: center">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="16"
+              height="16"
+              fill="currentColor"
+              class="bi bi-exclamation-circle-fill"
+              viewBox="0 0 16 16"
+              style="color: red"
+            >
+              <path
+                d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0M8 4a.905.905 0 0 0-.9.995l.35 3.507a.552.552 0 0 0 1.1 0l.35-3.507A.905.905 0 0 0 8 4m.002 6a1 1 0 1 0 0 2 1 1 0 0 0 0-2"
+              />
+            </svg>
+          </div>
+          }
+      </tr>
+    </table>
+
+    <div class="text-center">
+      <button type="submit" class="btn-div">
+        <a routerLink="/SingUp" routerLinkActive="activebutton" class="a-tag">SingUp</a>
+      </button>
+      <button type="submit" class="btn-div"  [disabled]="!LoginForm.valid">Submit</button>
+    </div>
+  </form>
+</div>

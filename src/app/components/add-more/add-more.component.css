@@ -1,0 +1,80 @@
+.main-div-first {
+    width: 320px;
+    height: 440px;
+    background-color:#F7F2FA; 
+    border-radius: 10px;
+    box-shadow: 3px 9px 15px rgb(0, 0, 0, 0.5);
+    transition: 0.s;
+    margin-top: 50px;
+
+}
+
+.img-div {
+    width: 275px;
+    height: 220px;
+    background-color:#e5e0da;
+    border-radius: 5px;
+    margin-inline-start: 20px;
+    align-items: center;
+    margin-top: 21px;
+}
+
+.car-toon-name {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    color: black;
+    font-size: x-large;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    padding: 20px;
+}
+
+.description-text {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    line-height: 1.3em;
+    font-size: 18px;
+    font-family: source-serif-pro, Georgia, Cambria, "Times New Roman", Times, serif;
+    margin: -3px 21px 19px;
+}
+.img-set-div{
+    width: 240px;
+    height: 190px;
+    border-radius: 5px;
+    margin-left: 16px;
+    margin-top: 16px;
+}
+/* code */
+
+.d-name{
+    color: black;
+    padding: 20px;
+    font-size: 21px;
+}
+.d-input{
+    padding: 10px;
+    height: 41px;
+    width: 250px;
+    margin: 0px 0px 15px 20px;
+    color: black;
+    border: 1px solid rgb(120, 113, 113);
+    font-family: -webkit-body;
+    border-radius: 8px;
+}
+.d-name-d{
+    color: black;
+    font-size: 21px;
+    padding: 0px 0px 14px 20px;
+}
+.d-btn{
+    width: 127px;
+    height: 37px;
+    border: none;
+    border-radius: 7px;
+    /* border: 1px solid black; */
+    font-size: 17px;
+    background-color: #e5e0da;
+}

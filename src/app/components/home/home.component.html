@@ -1,0 +1,298 @@
+
+<app-navbar></app-navbar>
+<div class="car-toon-div-main">
+  @for (live of liveData; track $index) {
+  <div class="main-div-first">
+    <div class="img-div">
+      <a href="{{ live.carToonLink }}" target="_blank">
+        <img [src]="imgUrl + live.reviewImage" alt="" class="img-set-div"
+      /></a>
+    </div>
+    <div class="car-toon-name">
+      <b>{{ live.name }}</b>
+    </div>
+    <div>
+      <div class="description-text">{{ live.description }}</div>
+    </div>
+
+    <div style="display: flex; justify-content: space-around">
+      <!-- UPDATE  -->
+
+      <div>
+        <button
+          class="btn btn-primary"
+          data-bs-toggle="modal"
+          data-bs-target="#exampleModal"
+          type="button"
+          id="bottone5"
+          (click)="storeAndOpenModal(live.id)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-eye"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M16 8s-3-5.5-8-5.5S0 8 0 8s3 5.5 8 5.5S16 8 16 8M1.173 8a13.133 13.133 0 0 1 1.66-2.043C4.12 4.668 5.88 3.5 8 3.5c2.12 0 3.879 1.168 5.168 2.457A13.133 13.133 0 0 1 14.828 8c-.058.087-.122.183-.195.288-.335.48-.83 1.12-1.465 1.755C11.879 11.332 10.119 12.5 8 12.5c-2.12 0-3.879-1.168-5.168-2.457A13.134 13.134 0 0 1 1.172 8z"
+            />
+            <path
+              d="M8 5.5a2.5 2.5 0 1 0 0 5 2.5 2.5 0 0 0 0-5M4.5 8a3.5 3.5 0 1 1 7 0 3.5 3.5 0 0 1-7 0"
+            />
+          </svg>
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="exampleModal"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                @for (d of showData; track $index) {
+
+                <h5 class="modal-title" id="exampleModalLabel">
+                  <b> CARTOON NAME : </b> {{ d.name }}
+                </h5>
+                }@empty { no data }
+
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                @for (d of showData; track $index) {
+                <div
+                  style="
+                    display: flex;
+                    justify-content: space-evenly;
+                    align-items: center;
+                  "
+                >
+                  <div class="img-div-show">
+                    <a href="{{ d.carToonLink }}" target="_blank">
+                      <img
+                        [src]="imgUrl + d.reviewImage"
+                        alt=""
+                        class="img-set-div-show"
+                    /></a>
+                  </div>
+                  <div class="modal-body">{{ d.description }}</div>
+                </div>
+                <div>
+                  <h5>This Cartoon video link</h5>
+                  <a href="{{ d.carToonLink }}" target="_blank">{{
+                    d.carToonLink
+                  }}</a>
+                </div>
+
+                }@empty { no data }
+              </div>
+
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- SHOW MORE  -->
+      <div>
+        <button
+          class="btn btn-primary"
+          id="bottone5"
+          data-bs-toggle="modal"
+          data-bs-target="#staticBackdrop01"
+          (click)="storeAndOpenModal(live.id)"
+        >
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-pencil"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z"
+            />
+          </svg>
+        </button>
+
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="staticBackdrop01"
+          data-bs-backdrop="static"
+          data-bs-keyboard="false"
+          tabindex="-1"
+          aria-labelledby="staticBackdropLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog">
+            <div class="modal-content">
+              <div class="modal-header">
+                <button
+                  type="button"
+                  class="btn-close"
+                  data-bs-dismiss="modal"
+                  aria-label="Close"
+                ></button>
+              </div>
+
+              <div class="modal-body">
+                <form
+                  #updateForm="ngForm"
+                  (submit)="updateDataId(storedId ?? 0, user)"
+                >
+                  <!-- <div>
+                    name
+                    <input
+                      type="text"
+                      placeholder="Enter Cartoon Name "
+                      name="name"
+                      [(ngModel)]="user.name"
+                      class="d-input"
+                    />
+                  </div> -->
+
+
+
+                  <div>
+                    <div class="d-name"><b>Add Name </b></div>
+                    <input
+                      type="text"
+                      placeholder="Enter Cartoon Name "
+                      name="name"
+                      [(ngModel)]="user.name"
+                      class="d-input"
+                    />
+                  </div>
+
+
+                  <!-- <div>
+                    description<textarea
+                      id="w3review"
+                      name="w3review"
+                      rows="4"
+                      cols="50"
+                      class="d-input"
+                      [(ngModel)]="user.description"
+                    >
+                    </textarea>
+                  </div> -->
+
+                  <div>
+                    <div class="d-name-d"><b>description</b></div>
+            
+                    <textarea
+                      id="w3review"
+                      name="w3review"
+                      rows="4"
+                      cols="50"
+                      class="form-control"
+                      style="width: 250px; height: 41px; margin: 0px 0px 15px 20px;border: 1px solid black;"
+                      [(ngModel)]="user.description"
+                    >
+                    </textarea>
+                  </div>
+                 
+                    <!-- <input
+                      type="file"
+                      (change)="uploadImg($event)"
+                      [(ngModel)]="user.reviewImage"
+                      class="d-input"
+                      name="img"
+                    /> -->
+                    <div class="d-name-d"><b>Select File</b></div>
+                    <input
+                    type="file"
+                    class="form-control"
+                    id="inputGroupFile04"
+                    [(ngModel)]="user.reviewImage"
+                    (change)="uploadImg($event)"
+                    style="width: 250px; height: 41px; margin: 0px 0px 15px 20px"
+                  />
+                  <!-- <div>
+                    link
+                    <input
+                    type="text"
+                    [(ngModel)]="user.carToonLink"
+                    class="d-input"
+                    name="link"
+                  />
+                  </div> -->
+                  <div>
+                    <div class="d-name-d"><b>Add Link </b></div>
+                    <input
+                      type="link"
+                      [(ngModel)]="user.carToonLink"
+                      class="d-input"
+                      name="name"
+                    />
+                  </div>
+                </form>
+              </div>
+
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Close
+                </button>
+                <button
+                  type="submit"
+                  class="btn btn-primary"
+                  data-bs-dismiss="modal"
+                  (click)="updateDataOnModalClose()"
+                >
+                  Understood
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- DELETED  -->
+
+      <div>
+        <button class="btn btn-danger" id="bottone5" (click)="removeDataById(live.id)">
+          <svg
+            xmlns="http://www.w3.org/2000/svg"
+            width="16"
+            height="16"
+            fill="currentColor"
+            class="bi bi-trash3"
+            viewBox="0 0 16 16"
+          >
+            <path
+              d="M6.5 1h3a.5.5 0 0 1 .5.5v1H6v-1a.5.5 0 0 1 .5-.5M11 2.5v-1A1.5 1.5 0 0 0 9.5 0h-3A1.5 1.5 0 0 0 5 1.5v1H2.506a.58.58 0 0 0-.01 0H1.5a.5.5 0 0 0 0 1h.538l.853 10.66A2 2 0 0 0 4.885 16h6.23a2 2 0 0 0 1.994-1.84l.853-10.66h.538a.5.5 0 0 0 0-1h-.995a.59.59 0 0 0-.01 0zm1.958 1-.846 10.58a1 1 0 0 1-.997.92h-6.23a1 1 0 0 1-.997-.92L3.042 3.5zm-7.487 1a.5.5 0 0 1 .528.47l.5 8.5a.5.5 0 0 1-.998.06L5 5.03a.5.5 0 0 1 .47-.53Zm5.058 0a.5.5 0 0 1 .47.53l-.5 8.5a.5.5 0 1 1-.998-.06l.5-8.5a.5.5 0 0 1 .528-.47ZM8 4.5a.5.5 0 0 1 .5.5v8.5a.5.5 0 0 1-1 0V5a.5.5 0 0 1 .5-.5"
+            />
+          </svg>
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+  } @empty { no data }
+</div>

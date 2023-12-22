@@ -1,0 +1,116 @@
+.website {
+    align-items: center;
+    justify-content: center;
+  
+    .Main {
+      max-width: 1440px;
+      margin: 0px auto;
+    }
+  
+    .navbar {
+      display: flex;
+      align-items: center;
+      width: 100%;
+      justify-content: space-between;
+      z-index: 1001;
+      height: 75px;
+   
+      background:#F7F2FA; 
+      
+      .logo {
+        font-style: normal;
+        font-weight: 700;
+        font-size: 24px;
+        line-height: 36px;
+        color: #f1a501;
+        margin-inline-start: 25px;
+      }
+  
+      .menu ul {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+      }
+  
+      .menu ul li {
+        margin-right: 44px;
+      }
+  
+      .menu ul li {
+        list-style: none;
+      }
+  
+      .menu ul li a {
+        text-decoration: none;
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 500;
+        font-size: 16px;
+        line-height: 21px;
+        color: #f1a501;
+      }
+      .health {
+        font-family: "Poppins";
+        font-style: normal;
+        font-weight: 700;
+        font-size: 48px;
+        line-height: 130%;
+  
+        color: #4f4f4f;
+      }
+    }
+  
+    .menu-burger-container {
+      position: relative;
+      width: 20px;
+      height: 15px;
+      cursor: pointer;
+      display: none;
+      .burger-line {
+        width: 20px;
+        height: 2.5px;
+        border-radius: 5px;
+        background: black;
+      }
+      .burger-line-2 {
+        top: 7px;
+        position: absolute;
+        width: 20px;
+        height: 2.3px;
+        border-radius: 5px;
+        bottom: 0px !important;
+        background: black;
+      }
+  
+      .burger-line-3 {
+        top: 14px;
+        position: absolute;
+        width: 20px;
+        height: 1.4px;
+        border-radius: 5px;
+        bottom: 0px !important;
+        background: black;
+      }
+     
+    }
+  
+    @media only screen and (max-width: 1000px) {
+      .navbar {
+        flex-direction: column;
+      }
+    }
+  
+    @media only screen and (max-width: 562px) {
+      .menu-link-button-container {
+        display: none;
+      }
+  
+      .menu-burger-container {
+        display: flex;
+        margin-left: 20pc;
+        margin-top: -28px;
+      }
+    }
+  }
+  

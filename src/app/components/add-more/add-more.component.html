@@ -1,0 +1,60 @@
+<app-navbar></app-navbar>
+<div class="car-toon-div-main">
+  <form
+    [action]=""
+    (submit)="onSubmit()"
+    style="display: flex; justify-content: center"
+  >
+    <div class="main-div-first">
+      <div>
+        <div class="d-name"><b>Add Name </b></div>
+        <input
+          type="text"
+          placeholder="Enter Cartoon Name "
+          name="name"
+          [(ngModel)]="user.name"
+          class="d-input"
+        />
+      </div>
+      <div>
+        <div class="d-name-d"><b>description</b></div>
+
+        <textarea
+          id="w3review"
+          name="w3review"
+          rows="4"
+          cols="50"
+          class="form-control"
+          style="width: 250px; height: 41px; margin: 0px 0px 15px 20px"
+          [(ngModel)]="user.description"
+        >
+        </textarea>
+      </div>
+
+      <input
+        type="file"
+        class="form-control"
+        id="inputGroupFile04"
+        [(ngModel)]="user.reviewImage"
+        (change)="uploadImg($event)"
+        style="width: 250px; height: 41px; margin: 0px 0px 15px 20px"
+      />
+      <div>
+        <div class="d-name-d"><b>Add Link </b></div>
+        <input
+          type="link"
+          [(ngModel)]="user.carToonLink"
+          class="d-input"
+          name="name"
+        />
+      </div>
+      <div style="display: flex; justify-content: center">
+        <button type="submit" class="d-btn" >
+          <!-- <a routerLink="/home" routerLinkActive="activebutton" class="a-tag">
+            submit</a
+          > -->submit
+         </button>
+      </div>
+    </div>
+  </form>
+</div>
